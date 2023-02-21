@@ -1,0 +1,3 @@
+install numpy, scipy, statsmodel, scikit-learn, matplotlib
+
+dataset details: https://rdrr.io/cran/mlbench/man/BostonHousing.html
