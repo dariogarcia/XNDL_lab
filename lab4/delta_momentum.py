@@ -51,15 +51,15 @@ def train_perceptron():
     model.add(Dense(1, input_dim=X.shape[1], activation='sigmoid'))
 
     # Compile the model
-    learning_rate = 0.01
     sgd = SGD(lr=learning_rate)
+    learning_rate = 0.1
     model.compile(loss='binary_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
     #Early stopping
-    early_stop = EarlyStopping(monitor='val_loss', patience=5, mode='min', verbose=1)
+    early_stop = EarlyStopping(monitor='val_loss', patience=3, mode='min', verbose=1)
     
     # Train the model
-    history = model.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=2, verbose=1)
+    history = model.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=50, verbose=1)
     # Evaluate the model on the validation set
     loss, accuracy = model.evaluate(X_val, y_val, verbose=1)
     print("Validation loss: {:.3f}, Validation accuracy: {:.3f}".format(loss, accuracy))
