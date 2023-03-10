@@ -43,7 +43,7 @@ def train_perceptron():
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
     # Train the model
-    history = model.fit(X, y, epochs=500, verbose=0)
+    history = model.fit(X, y, epochs=50, verbose=1)
     plot_training_curve(history)
     plot_decision_boundary(model,X,y)
 
