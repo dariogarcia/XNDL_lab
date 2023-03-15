@@ -51,8 +51,8 @@ def train_perceptron():
     model.add(Dense(1, input_dim=X.shape[1], activation='sigmoid'))
 
     # Compile the model
-    sgd = SGD(lr=learning_rate)
     learning_rate = 0.1
+    sgd = SGD(lr=learning_rate)
     model.compile(loss='binary_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
     #Early stopping
