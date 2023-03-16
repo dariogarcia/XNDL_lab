@@ -8,8 +8,10 @@ from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from keras.callbacks import EarlyStopping
+import tensorflow as tf
 
 np.random.seed(42)
+tf.random.set_seed(314)
 
 def plot_training_curve(history):
     # Plot the training and validation loss
